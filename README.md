@@ -13,6 +13,8 @@ O projeto foi elaborado como exercício para aplicar conceitos de:
 
 ✅ Componentes e serviços com @Service.
 
+---
+
 ## Requisitos e regras do sistema
 
 O cálculo do valor total do pedido é feito aplicando o desconto sobre o valor básico e somando o valor do frete.
@@ -24,25 +26,27 @@ O cálculo do valor total do pedido é feito aplicando o desconto sobre o valor 
 | De R\$ 100,00 até R\$ 200,00 (exclusive) | R\$ 12,00         |
 | A partir de R\$ 200,00                   | Grátis (R\$ 0,00) |
 
+---
+
 ### Tecnologias utilizadas
 - Java 21
 - Spring Boot 3.5.0
 - Maven
+---
 
 ### Estrutura das Classes:
-Order → entidade que representa um pedido, com:
+- `Order` → Entidade que representa um pedido, com:
+    - `code` (Integer): código do pedido.
+    - `basic` (double): valor básico do pedido.
+    - `discount` (Double): percentual de desconto.
 
-code (Integer): código do pedido.
+- `ShippingService` → Serviço responsável pelo cálculo do frete.
 
-basic (double): valor básico do pedido.
+- `OrderService` → Serviço responsável pelo cálculo do valor total do pedido.
 
-discount (Double): percentual de desconto.
+- `DesafioApplication` → Classe principal que executa exemplos de pedidos e imprime os resultados no console.
 
-ShippingService → serviço responsável pelo cálculo do frete.
-
-OrderService → serviço responsável pelo cálculo do valor total do pedido.
-
-DesafioApplication → classe principal que executa exemplos de pedidos e imprime os resultados no console.
+---
 
 ### Saida esperada:
 ```
@@ -50,6 +54,7 @@ Pedido código 1034
 Valor total: R$ 132.00
 ```
 
+---
 ## Como executar o projeto
 Para executar o projeto, siga os passos abaixo:
 ```
